@@ -1,0 +1,21 @@
+# Uploaded files (user content, not source code)
+uploads/
+quo/assets/uploads/
+
+# Large archive files
+*.zip
+*.sql
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment
+.env
+*.log

@@ -1,0 +1,905 @@
+/* ============================================================
+   GRAVITTI QUOTATION — Custom UI Enhancement
+   A modern overlay for the Kaiadmin admin template
+   ============================================================ */
+
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* --- CSS Custom Properties (Design Tokens) --- */
+:root {
+  /* Primary Palette */
+  --gv-primary: #4f46e5;
+  --gv-primary-light: #818cf8;
+  --gv-primary-dark: #3730a3;
+  --gv-primary-bg: rgba(79, 70, 229, 0.08);
+
+  /* Accent */
+  --gv-accent: #06b6d4;
+  --gv-accent-light: #67e8f9;
+
+  /* Semantic Colors */
+  --gv-success: #10b981;
+  --gv-warning: #f59e0b;
+  --gv-danger: #ef4444;
+  --gv-info: #3b82f6;
+
+  /* Neutrals */
+  --gv-bg: #f0f2f5;
+  --gv-surface: #ffffff;
+  --gv-surface-hover: #f8fafc;
+  --gv-border: #e2e8f0;
+  --gv-text: #1e293b;
+  --gv-text-secondary: #64748b;
+  --gv-text-muted: #94a3b8;
+
+  /* Sidebar Dark */
+  --gv-sidebar-bg: #0f172a;
+  --gv-sidebar-hover: rgba(255, 255, 255, 0.08);
+  --gv-sidebar-active: rgba(79, 70, 229, 0.25);
+
+  /* Shadows */
+  --gv-shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --gv-shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+  --gv-shadow-lg: 0 10px 25px -5px rgba(0,0,0,0.08), 0 8px 10px -6px rgba(0,0,0,0.04);
+  --gv-shadow-xl: 0 20px 40px -12px rgba(0,0,0,0.12);
+
+  /* Radius */
+  --gv-radius-sm: 6px;
+  --gv-radius: 10px;
+  --gv-radius-lg: 16px;
+  --gv-radius-xl: 20px;
+
+  /* Transitions */
+  --gv-transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================================
+   1. GLOBAL FOUNDATION
+   ============================================================ */
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  background-color: var(--gv-bg) !important;
+  color: var(--gv-text) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth scroll */
+html { scroll-behavior: smooth; }
+
+/* Better selection */
+::selection {
+  background: var(--gv-primary-light);
+  color: white;
+}
+
+/* ============================================================
+   2. SIDEBAR REFINEMENT
+   ============================================================ */
+
+.sidebar[data-background-color="dark"] {
+  background: var(--gv-sidebar-bg) !important;
+  border-right: 1px solid rgba(255,255,255,0.06);
+}
+
+.sidebar .sidebar-wrapper {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.15) transparent;
+}
+
+.sidebar .nav-secondary .nav-item > a {
+  border-radius: var(--gv-radius-sm);
+  margin: 2px 12px;
+  padding: 10px 16px !important;
+  transition: var(--gv-transition);
+  font-weight: 500;
+  font-size: 13.5px;
+  letter-spacing: 0.01em;
+}
+
+.sidebar .nav-secondary .nav-item > a:hover {
+  background: var(--gv-sidebar-hover) !important;
+  transform: translateX(3px);
+}
+
+.sidebar .nav-secondary .nav-item > a.active,
+.sidebar .nav-secondary .nav-item.active > a {
+  background: var(--gv-sidebar-active) !important;
+  color: var(--gv-primary-light) !important;
+}
+
+.sidebar .nav-secondary .nav-item > a i {
+  font-size: 16px;
+  width: 22px;
+  text-align: center;
+  opacity: 0.8;
+}
+
+.sidebar .nav-collapse .sub-item {
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.6);
+  transition: var(--gv-transition);
+}
+
+.sidebar .nav-collapse li > a:hover .sub-item {
+  color: rgba(255,255,255,0.95) !important;
+  transform: translateX(4px);
+}
+
+/* Logo area */
+.logo-header[data-background-color="dark"] {
+  background: var(--gv-sidebar-bg) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+/* ============================================================
+   3. TOP NAVBAR
+   ============================================================ */
+
+.main-header {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border-bottom: 1px solid var(--gv-border) !important;
+  box-shadow: var(--gv-shadow-sm);
+}
+
+.navbar-header {
+  background: transparent !important;
+}
+
+.profile-username .fw-bold {
+  font-weight: 600 !important;
+  font-size: 14px;
+  color: var(--gv-text);
+}
+
+.profile-username .op-7 {
+  color: var(--gv-text-secondary);
+  font-weight: 400;
+}
+
+/* Avatar ring */
+.avatar-sm img.avatar-img {
+  border: 2px solid var(--gv-primary-light);
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.15);
+  transition: var(--gv-transition);
+}
+
+.avatar-sm img.avatar-img:hover {
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.2);
+  transform: scale(1.05);
+}
+
+/* ============================================================
+   4. CARDS — Glassmorphism & Polish
+   ============================================================ */
+
+.card {
+  background: var(--gv-surface) !important;
+  border: 1px solid var(--gv-border) !important;
+  border-radius: var(--gv-radius-lg) !important;
+  box-shadow: var(--gv-shadow-sm) !important;
+  transition: var(--gv-transition);
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: var(--gv-shadow-md) !important;
+}
+
+.card-header {
+  background: transparent !important;
+  border-bottom: 1px solid var(--gv-border) !important;
+  padding: 20px 24px !important;
+}
+
+.card-title {
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  color: var(--gv-text) !important;
+  letter-spacing: -0.01em;
+}
+
+.card-body {
+  padding: 24px !important;
+}
+
+.card-action {
+  background: var(--gv-surface-hover) !important;
+  border-top: 1px solid var(--gv-border) !important;
+  padding: 16px 24px !important;
+}
+
+/* ============================================================
+   5. TABLES — Clean & Modern
+   ============================================================ */
+
+.table {
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 13.5px;
+}
+
+.table thead th {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%) !important;
+  color: var(--gv-text-secondary) !important;
+  font-weight: 600 !important;
+  font-size: 11.5px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 14px 16px !important;
+  border-bottom: 2px solid var(--gv-border) !important;
+  white-space: nowrap;
+}
+
+.table tbody td {
+  padding: 14px 16px !important;
+  vertical-align: middle !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+  color: var(--gv-text);
+  transition: var(--gv-transition);
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(248, 250, 252, 0.5) !important;
+}
+
+.table tbody tr:hover td {
+  background-color: var(--gv-primary-bg) !important;
+}
+
+/* Quotation table item cards */
+.table tbody td:first-child {
+  font-weight: 500;
+}
+
+/* ============================================================
+   6. BUTTONS — Refined & Interactive
+   ============================================================ */
+
+.btn {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+  border-radius: var(--gv-radius-sm) !important;
+  font-size: 13px !important;
+  padding: 8px 18px !important;
+  transition: var(--gv-transition);
+  letter-spacing: 0.01em;
+  border: none !important;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* Primary */
+.btn-primary {
+  background: linear-gradient(135deg, var(--gv-primary) 0%, var(--gv-primary-dark) 100%) !important;
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--gv-primary-light) 0%, var(--gv-primary) 100%) !important;
+  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Success */
+.btn-success {
+  background: linear-gradient(135deg, var(--gv-success) 0%, #059669 100%) !important;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.btn-success:hover {
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Danger */
+.btn-danger {
+  background: linear-gradient(135deg, var(--gv-danger) 0%, #dc2626 100%) !important;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+}
+
+.btn-danger:hover {
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Secondary / outline */
+.btn-secondary {
+  background: linear-gradient(135deg, #64748b 0%, #475569 100%) !important;
+}
+
+.btn-outline-light {
+  border: 1px solid rgba(255,255,255,0.3) !important;
+  font-weight: 500 !important;
+}
+
+/* Small buttons in tables */
+.btn-sm {
+  padding: 5px 10px !important;
+  font-size: 12px !important;
+  border-radius: var(--gv-radius-sm) !important;
+}
+
+.form-button-action .btn {
+  border-radius: 8px !important;
+  width: 32px;
+  height: 32px;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+}
+
+/* ============================================================
+   7. FORMS — Polished Inputs
+   ============================================================ */
+
+.form-control {
+  border: 1.5px solid var(--gv-border) !important;
+  border-radius: var(--gv-radius-sm) !important;
+  padding: 10px 14px !important;
+  font-size: 14px !important;
+  font-family: 'Inter', sans-serif !important;
+  color: var(--gv-text) !important;
+  background: var(--gv-surface) !important;
+  transition: var(--gv-transition);
+}
+
+.form-control:focus {
+  border-color: var(--gv-primary) !important;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12) !important;
+  outline: none !important;
+}
+
+.form-control::placeholder {
+  color: var(--gv-text-muted) !important;
+  font-weight: 400;
+}
+
+.form-select {
+  border: 1.5px solid var(--gv-border) !important;
+  border-radius: var(--gv-radius-sm) !important;
+  padding: 10px 14px !important;
+  font-size: 14px !important;
+  font-family: 'Inter', sans-serif !important;
+  transition: var(--gv-transition);
+}
+
+.form-select:focus {
+  border-color: var(--gv-primary) !important;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12) !important;
+}
+
+.form-group label,
+.form-label {
+  font-weight: 600 !important;
+  font-size: 12.5px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--gv-text-secondary) !important;
+  margin-bottom: 6px !important;
+}
+
+.input-group-text {
+  background: #f8fafc !important;
+  border: 1.5px solid var(--gv-border) !important;
+  border-radius: var(--gv-radius-sm) !important;
+  font-size: 14px !important;
+  color: var(--gv-text-secondary) !important;
+  font-weight: 500;
+}
+
+/* Custom checkbox / radio */
+.form-check-input:checked {
+  background-color: var(--gv-primary) !important;
+  border-color: var(--gv-primary) !important;
+}
+
+.form-check-input:focus {
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15) !important;
+}
+
+/* ============================================================
+   8. MODALS — Premium Feel
+   ============================================================ */
+
+.modal-content {
+  border: none !important;
+  border-radius: var(--gv-radius-lg) !important;
+  box-shadow: var(--gv-shadow-xl) !important;
+  overflow: hidden;
+}
+
+.modal-header {
+  background: linear-gradient(135deg, var(--gv-primary) 0%, var(--gv-primary-dark) 100%) !important;
+  color: white !important;
+  padding: 18px 24px !important;
+  border-bottom: none !important;
+}
+
+.modal-header .modal-title {
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  color: white !important;
+}
+
+.modal-header .btn-close {
+  filter: brightness(0) invert(1);
+  opacity: 0.8;
+}
+
+.modal-header .btn-close:hover {
+  opacity: 1;
+}
+
+.modal-body {
+  padding: 24px !important;
+}
+
+.modal-footer {
+  background: var(--gv-surface-hover) !important;
+  border-top: 1px solid var(--gv-border) !important;
+  padding: 16px 24px !important;
+}
+
+.modal-backdrop.show {
+  backdrop-filter: blur(4px);
+}
+
+/* ============================================================
+   9. PAGE HEADER & BREADCRUMBS
+   ============================================================ */
+
+.page-header h3 {
+  font-weight: 800 !important;
+  font-size: 22px !important;
+  color: var(--gv-text) !important;
+  letter-spacing: -0.02em;
+}
+
+.breadcrumbs {
+  background: transparent;
+}
+
+.breadcrumbs li a {
+  color: var(--gv-text-secondary) !important;
+  font-size: 13px;
+  font-weight: 500;
+  transition: var(--gv-transition);
+}
+
+.breadcrumbs li a:hover {
+  color: var(--gv-primary) !important;
+}
+
+.breadcrumbs .separator i {
+  color: var(--gv-text-muted);
+  font-size: 10px;
+}
+
+/* ============================================================
+   10. QUOTATION TABLE — Special Styling
+   ============================================================ */
+
+/* Clickable quo code link */
+td.quo-code {
+  color: var(--gv-primary) !important;
+  font-weight: 600 !important;
+  cursor: pointer;
+  transition: var(--gv-transition);
+}
+
+td.quo-code:hover {
+  color: var(--gv-primary-dark) !important;
+  text-decoration: underline;
+}
+
+/* Amount column bold */
+td[data-total-ppn] {
+  font-weight: 700 !important;
+  font-variant-numeric: tabular-nums;
+  color: var(--gv-text) !important;
+}
+
+/* ============================================================
+   11. DROPDOWN MENUS
+   ============================================================ */
+
+.dropdown-menu {
+  border: 1px solid var(--gv-border) !important;
+  border-radius: var(--gv-radius) !important;
+  box-shadow: var(--gv-shadow-lg) !important;
+  padding: 6px !important;
+  animation: dropdownFadeIn 0.2s ease-out;
+}
+
+@keyframes dropdownFadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dropdown-item {
+  border-radius: var(--gv-radius-sm) !important;
+  padding: 9px 14px !important;
+  font-size: 13.5px !important;
+  font-weight: 500;
+  color: var(--gv-text) !important;
+  transition: var(--gv-transition);
+}
+
+.dropdown-item:hover {
+  background: var(--gv-primary-bg) !important;
+  color: var(--gv-primary) !important;
+}
+
+/* User dropdown */
+.dropdown-user {
+  min-width: 240px !important;
+}
+
+.user-box {
+  padding: 16px !important;
+  text-align: center;
+}
+
+.user-box h4 {
+  font-weight: 700 !important;
+  font-size: 15px !important;
+  color: var(--gv-text);
+  margin-top: 8px;
+}
+
+/* ============================================================
+   12. ALERTS & BADGES
+   ============================================================ */
+
+.alert {
+  border-radius: var(--gv-radius) !important;
+  border: none !important;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.alert-info {
+  background: rgba(59, 130, 246, 0.1) !important;
+  color: #1e40af !important;
+  border-left: 4px solid var(--gv-info) !important;
+}
+
+.alert-danger {
+  background: rgba(239, 68, 68, 0.08) !important;
+  color: #991b1b !important;
+  border-left: 4px solid var(--gv-danger) !important;
+}
+
+.badge {
+  font-weight: 600 !important;
+  font-size: 11px !important;
+  padding: 5px 10px !important;
+  border-radius: 20px !important;
+  letter-spacing: 0.03em;
+}
+
+/* ============================================================
+   13. DATATABLE OVERRIDES
+   ============================================================ */
+
+div.dataTables_wrapper .dataTables_info {
+  font-size: 13px;
+  color: var(--gv-text-secondary);
+  font-weight: 500;
+}
+
+div.dataTables_wrapper .dataTables_paginate .paginate_button {
+  border-radius: var(--gv-radius-sm) !important;
+  margin: 0 2px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  transition: var(--gv-transition);
+}
+
+div.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  background: var(--gv-primary) !important;
+  color: white !important;
+  border: none !important;
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
+}
+
+div.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  background: var(--gv-primary-bg) !important;
+  color: var(--gv-primary) !important;
+  border: none !important;
+}
+
+div.dataTables_wrapper .dataTables_length select,
+div.dataTables_wrapper .dataTables_filter input {
+  border: 1.5px solid var(--gv-border) !important;
+  border-radius: var(--gv-radius-sm) !important;
+  padding: 6px 12px !important;
+  font-size: 13px !important;
+  transition: var(--gv-transition);
+}
+
+div.dataTables_wrapper .dataTables_filter input:focus {
+  border-color: var(--gv-primary) !important;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12) !important;
+  outline: none;
+}
+
+/* ============================================================
+   14. LOGIN & SIGNUP PAGES
+   ============================================================ */
+
+/* Centered login card styling */
+body > .wrapper > .container.col-6 .card {
+  border-radius: var(--gv-radius-xl) !important;
+  box-shadow: var(--gv-shadow-xl) !important;
+  max-width: 460px;
+  margin: 40px auto;
+}
+
+body > .wrapper > .container.col-6 .card-header {
+  background: linear-gradient(135deg, var(--gv-primary) 0%, var(--gv-primary-dark) 100%) !important;
+  color: white !important;
+  text-align: center;
+  padding: 28px 24px !important;
+  border-radius: var(--gv-radius-xl) var(--gv-radius-xl) 0 0 !important;
+}
+
+body > .wrapper > .container.col-6 .card-header .card-title {
+  color: white !important;
+  font-size: 20px !important;
+  font-weight: 800 !important;
+}
+
+/* ============================================================
+   15. SCROLLBAR STYLING
+   ============================================================ */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* ============================================================
+   16. FOOTER
+   ============================================================ */
+
+.footer {
+  background: var(--gv-surface) !important;
+  border-top: 1px solid var(--gv-border) !important;
+  font-size: 13px;
+  color: var(--gv-text-secondary);
+}
+
+.footer a {
+  color: var(--gv-primary) !important;
+  font-weight: 600;
+  transition: var(--gv-transition);
+}
+
+.footer a:hover {
+  color: var(--gv-primary-dark) !important;
+}
+
+/* ============================================================
+   17. FLOATING MENU — Modernized
+   ============================================================ */
+
+.floating-menu2 .menu-btn2 {
+  background: linear-gradient(135deg, var(--gv-primary) 0%, var(--gv-primary-dark) 100%) !important;
+  border-radius: 16px !important;
+  width: 52px;
+  height: 52px;
+  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
+  animation: none !important;
+}
+
+.floating-menu2 .menu-btn2:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.5);
+}
+
+.submenu2 .menu-item2 {
+  border-radius: var(--gv-radius) !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  color: var(--gv-text) !important;
+  box-shadow: var(--gv-shadow-md) !important;
+  border: 1px solid var(--gv-border);
+}
+
+.submenu2 .menu-item2:hover {
+  background: var(--gv-primary-bg) !important;
+  color: var(--gv-primary) !important;
+  border-color: var(--gv-primary-light);
+}
+
+/* ============================================================
+   18. PAGE CONTENT AREA
+   ============================================================ */
+
+.main-panel {
+  background: var(--gv-bg) !important;
+}
+
+.page-inner {
+  padding: 24px !important;
+}
+
+/* ============================================================
+   19. MICRO-ANIMATIONS
+   ============================================================ */
+
+/* Fade-in animation for page content */
+.page-inner {
+  animation: pageContentFadeIn 0.4s ease-out;
+}
+
+@keyframes pageContentFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Card entrance animation */
+.card {
+  animation: cardEntrance 0.35s ease-out;
+}
+
+@keyframes cardEntrance {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Row highlight transition in tables */
+.table tbody tr {
+  transition: var(--gv-transition);
+}
+
+/* ============================================================
+   20. QUOTATION FORM — Special Items
+   ============================================================ */
+
+/* Product item rows in the quotation form table */
+.table td textarea,
+.table td input[type="text"],
+.table td input[type="number"] {
+  border: 1px solid transparent !important;
+  background: var(--gv-surface-hover) !important;
+  border-radius: var(--gv-radius-sm) !important;
+  padding: 8px 10px !important;
+  font-size: 13px !important;
+  transition: var(--gv-transition);
+}
+
+.table td textarea:focus,
+.table td input[type="text"]:focus,
+.table td input[type="number"]:focus {
+  border-color: var(--gv-primary) !important;
+  background: white !important;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.1) !important;
+}
+
+/* Delete row button (X) */
+.table .btn-danger.btn-sm {
+  background: rgba(239, 68, 68, 0.1) !important;
+  color: var(--gv-danger) !important;
+  border: 1px solid rgba(239, 68, 68, 0.2) !important;
+  box-shadow: none !important;
+}
+
+.table .btn-danger.btn-sm:hover {
+  background: var(--gv-danger) !important;
+  color: white !important;
+}
+
+/* Summary panel on the right */
+.card-body h5, .card-body h6 {
+  font-weight: 700 !important;
+  letter-spacing: -0.01em;
+}
+
+/* ============================================================
+   21. TOOLTIP STYLING
+   ============================================================ */
+
+.tooltip-inner {
+  background: var(--gv-sidebar-bg) !important;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: var(--gv-radius-sm);
+  padding: 6px 12px;
+}
+
+/* ============================================================
+   22. RESPONSIVE TWEAKS
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .page-inner {
+    padding: 16px !important;
+  }
+
+  .card-header {
+    padding: 16px 18px !important;
+  }
+
+  .card-body {
+    padding: 18px !important;
+  }
+
+  .card-title {
+    font-size: 15px !important;
+  }
+
+  .table thead th {
+    font-size: 10px !important;
+    padding: 10px 8px !important;
+  }
+
+  .table tbody td {
+    font-size: 12.5px;
+    padding: 10px 8px !important;
+  }
+
+  .btn {
+    font-size: 12px !important;
+    padding: 7px 14px !important;
+  }
+
+  /* Stack the floating menu better on mobile */
+  .floating-menu2 .menu-btn2 {
+    width: 46px;
+    height: 46px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  body > .wrapper > .container.col-6 {
+    width: 95% !important;
+    max-width: 100% !important;
+    padding: 0 12px;
+  }
+}
+
+/* ============================================================
+   23. PRINT STYLES — Keep clean for quotation PDFs
+   ============================================================ */
+
+@media print {
+  .sidebar, .main-header, .floating-menu2, .footer, .btn {
+    display: none !important;
+  }
+
+  .main-panel {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+
+  .card {
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+  }
+}

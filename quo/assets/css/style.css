@@ -1,0 +1,36 @@
+/* assets/css/style.css */
+
+/* Memberi sedikit padding pada body agar konten tidak menempel di navigasi */
+body {
+    /*padding-top: 1rem;*/
+    /*padding-bottom: 1rem;*/
+    background-color: #f4f7f9;
+}
+
+/* Membuat badge status memiliki ukuran yang seragam dan teks lebih jelas */
+.status-badge {
+    padding: 0.5em 0.75em;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Memberi efek hover pada baris tabel agar lebih interaktif */
+.table-hover tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+.item-table-fixed {
+    table-layout: fixed; /* Memaksa tabel mengikuti lebar kolom yang ditentukan */
+    width: 100%;
+}
+
+.item-table-fixed th {
+    white-space: nowrap; /* Mencegah header tabel turun ke bawah */
+    text-align: center;
+}
+
+.item-table-fixed td {
+    vertical-align: middle; /* Membuat konten sel secara vertikal di tengah */
+}

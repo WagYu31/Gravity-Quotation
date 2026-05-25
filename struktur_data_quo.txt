@@ -1,0 +1,703 @@
+.
+├── 404.html
+├── 502.html
+├── add-product.php
+├── addRowNP.php
+├── addRow.php
+├── assets
+│   ├── css
+│   │   ├── bootstrap.min.css
+│   │   ├── demo.css
+│   │   ├── demo.css.map
+│   │   ├── fonts.css
+│   │   ├── fonts.min.css
+│   │   ├── kaiadmin.css
+│   │   ├── kaiadmin.css.map
+│   │   ├── kaiadmin.min.css
+│   │   ├── plugins.css
+│   │   ├── plugins.css.map
+│   │   └── plugins.min.css
+│   ├── fonts
+│   │   ├── fontawesome
+│   │   │   ├── fa-brands-400.eot
+│   │   │   ├── fa-brands-400.svg
+│   │   │   ├── fa-brands-400.ttf
+│   │   │   ├── fa-brands-400.woff
+│   │   │   ├── fa-brands-400.woff2
+│   │   │   ├── fa-regular-400.eot
+│   │   │   ├── fa-regular-400.svg
+│   │   │   ├── fa-regular-400.ttf
+│   │   │   ├── fa-regular-400.woff
+│   │   │   ├── fa-regular-400.woff2
+│   │   │   ├── fa-solid-900.eot
+│   │   │   ├── fa-solid-900.svg
+│   │   │   ├── fa-solid-900.ttf
+│   │   │   ├── fa-solid-900.woff
+│   │   │   └── fa-solid-900.woff2
+│   │   ├── simple-line-icons
+│   │   │   ├── Simple-Line-Icons.eot
+│   │   │   ├── Simple-Line-Icons.svg
+│   │   │   ├── Simple-Line-Icons.ttf
+│   │   │   ├── Simple-Line-Icons.woff
+│   │   │   └── Simple-Line-Icons.woff2
+│   │   └── summernote
+│   │       ├── summernote.eot
+│   │       ├── summernote.ttf
+│   │       ├── summernote.woff
+│   │       └── summernote.woff2
+│   ├── img
+│   │   ├── grav.png
+│   │   ├── img-shadow.png
+│   │   ├── loewix.png
+│   │   ├── logo.png
+│   │   ├── lwx-pth.png
+│   │   ├── ttd-aulia.png
+│   │   └── visa.svg
+│   └── js
+│       ├── core
+│       │   ├── bootstrap.min.js
+│       │   ├── jquery-3.7.1.min.js
+│       │   └── popper.min.js
+│       ├── demo.js
+│       ├── kaiadmin.js
+│       ├── kaiadmin.min.js
+│       ├── plugin
+│       │   ├── bootstrap-notify
+│       │   │   └── bootstrap-notify.min.js
+│       │   ├── bootstrap-tagsinput
+│       │   │   └── bootstrap-tagsinput.min.js
+│       │   ├── bootstrap-toggle
+│       │   │   └── bootstrap-toggle.min.js
+│       │   ├── chart-circle
+│       │   │   └── circles.min.js
+│       │   ├── chart.js
+│       │   │   └── chart.min.js
+│       │   ├── datatables
+│       │   │   └── datatables.min.js
+│       │   ├── datepicker
+│       │   │   └── bootstrap-datetimepicker.min.js
+│       │   ├── dropzone
+│       │   │   └── dropzone.min.js
+│       │   ├── fullcalendar
+│       │   │   └── fullcalendar.min.js
+│       │   ├── gmaps
+│       │   │   └── gmaps.js
+│       │   ├── jquery.magnific-popup
+│       │   │   └── jquery.magnific-popup.min.js
+│       │   ├── jquery-scrollbar
+│       │   │   └── jquery.scrollbar.min.js
+│       │   ├── jquery.sparkline
+│       │   │   └── jquery.sparkline.min.js
+│       │   ├── jquery.validate
+│       │   │   └── jquery.validate.min.js
+│       │   ├── jsvectormap
+│       │   │   ├── jsvectormap.min.js
+│       │   │   └── world.js
+│       │   ├── list.js
+│       │   │   └── list.min.js
+│       │   ├── moment
+│       │   │   └── moment.min.js
+│       │   ├── owl-carousel
+│       │   │   ├── ajax-loader.gif
+│       │   │   ├── owl.carousel.min.js
+│       │   │   └── owl.video.play.png
+│       │   ├── select2
+│       │   │   └── select2.full.min.js
+│       │   ├── sortable
+│       │   │   └── sortable.min.js
+│       │   ├── sticky-sidebar
+│       │   │   └── sticky-sidebar.min.js
+│       │   ├── summernote
+│       │   │   └── summernote-lite.min.js
+│       │   ├── sweetalert
+│       │   │   └── sweetalert.min.js
+│       │   └── webfont
+│       │       └── webfont.min.js
+│       ├── setting-demo2.js
+│       └── setting-demo.js
+├── backup_quoProgress.php
+├── center-login.php
+├── charts
+│   ├── charts.html
+│   └── sparkline.html
+├── components
+│   ├── avatars.html
+│   ├── buttons.html
+│   ├── font-awesome-icons.html
+│   ├── gridsystem.html
+│   ├── notifications.html
+│   ├── panels.html
+│   ├── simple-line-icons.html
+│   ├── sweetalert.html
+│   └── typography.html
+├── conn.php
+├── core-scripts.php
+├── css
+│   └── floating-menu2.css
+├── customers.php
+├── custom-temp.php
+├── default.php
+├── delete_customer.php
+├── delete_kegiatan.php
+├── delete-product.php
+├── delete_quo_detail.php
+├── deleteQuotation.php
+├── delete_user.php
+├── edit_customer.php
+├── edit-product.php
+├── fetch_note.php
+├── fetch_table_data.php
+├── floating-menu.php
+├── footer.php
+├── forms
+│   └── forms.html
+├── get_activities.php
+├── get_customer.php
+├── getLastQuoCode.php
+├── get_product_price.php
+├── getQuoDetail.php
+├── getQuoDetails.php
+├── get_user_data.php
+├── head.php
+├── .htaccess
+├── icon-menu.html
+├── index.php
+├── indexx.html
+├── insert_barang_baru.php
+├── insert_quo_detail.php
+├── isi-progress.php
+├── LICENSE
+├── listQuotation.php
+├── login.php
+├── logo-header.php
+├── logout.php
+├── maps
+│   ├── googlemaps.html
+│   └── jsvectormap.html
+├── navbar-header.php
+├── new-quotation.php
+├── newQuotation.php
+├── new-request.php
+├── noPic.php
+├── previewQuotation.php
+├── prevQuo.php
+├── process_discard_quotation.php
+├── process_edit_quotation.php
+├── process_edit_user.php
+├── process_insert_customer.php
+├── process_quotation.php
+├── process_user_input.php
+├── process_valid.php
+├── products.php
+├── profile.php
+├── proses_insert_barang_baru.php
+├── proses_insert.php
+├── proses_login.php
+├── proses_pasang.php
+├── proses_req.php
+├── proses_req_survey.php
+├── proses_signup.php
+├── proses_update_product.php
+├── quo
+│   ├── assets
+│   │   ├── css
+│   │   │   └── style.css
+│   │   ├── img
+│   │   │   ├── img-shadow.png
+│   │   │   ├── logo3.png
+│   │   │   ├── logo.png
+│   │   │   ├── lwx.png
+│   │   │   ├── lwx-pth.png
+│   │   │   ├── ttd-aulia.png
+│   │   │   └── visa.svg
+│   │   ├── js
+│   │   │   └── app.js
+│   │   └── uploads
+│   │       ├── barang
+│   │       │   ├── 10989999_41b07_62.png
+│   │       │   ├── 10989999_65868_62.png
+│   │       │   ├── 10989999_bcf2a_6644.png
+│   │       │   ├── 686f5c235f51a_Desain tanpa judul (3).png
+│   │       │   ├── 687ef85515424_Desain tanpa judul (13).png
+│   │       │   ├── 687ef90483ea9_Untitled design (15).png
+│   │       │   ├── 688703d19ce8e_PAKET 2MP XVR NEW-04.jpg
+│   │       │   ├── 68da0d25a92c1_Teks paragraf Anda (4).jpg
+│   │       │   ├── 6902e341152f6_CASING BARU INDOOR.png
+│   │       │   ├── 6902e391ed958_2MP AHD OUTDOOR LX-50F320CE.png
+│   │       │   ├── 6902e39b941e7_2MP AHD OUTDOOR LX-50F320CE.png
+│   │       │   ├── 6902e3a896224_2MP AHD OUTDOOR LX-50F320CE.png
+│   │       │   ├── 6902e3b597ced_2MP AHD OUTDOOR LX-50F320CE.png
+│   │       │   ├── 777_Test_aja_f3a2c_5946.jpg
+│   │       │   ├── 888_test_aha_9e434_2121.jpg
+│   │       │   ├── A1-20BC_0372c_76.png
+│   │       │   ├── A1-20BC_ed7fc_1134.png
+│   │       │   ├── Access_Point_96ee6_6874.jpg
+│   │       │   ├── ADAPTOR_2A_711d5_8512.png
+│   │       │   ├── ADAPTOR_5A_02bc7_8664.png
+│   │       │   ├── ADAPTOR_dd93a_7810.png
+│   │       │   ├── AI_Camera_Outdoor_Face_Detection_6MP_LX-850AI_598b7_5529.jpg
+│   │       │   ├── Ai-OT380M_32aa7_77.png
+│   │       │   ├── Ai-OT380M_dc8f0_6177.png
+│   │       │   ├── BNC_9e6d8_5341.png
+│   │       │   ├── B P_b888b_187.jpg
+│   │       │   ├── Bracket_77ed6_1234.jpg
+│   │       │   ├── Camera_Outdoor_4MP_LX-1830CE_IP_Full_8d38c_6452.jpg
+│   │       │   ├── Camera_Outdoor_4MP_LX-1830CE_IP_Full_Color_6ce7a_4261.jpg
+│   │       │   ├── Camera_Outdoor_4MP_LX-1830CE_IP_Full_Color_70063_4187.jpg
+│   │       │   ├── Camera_Outdoor_4MP_LX-1830CE_IP_Full_Color_b2196_5362.jpg
+│   │       │   ├── Camera_Outdoor_4MP_LX-1830CE_IP_Full_Color_e3756_9470.jpg
+│   │       │   ├── Camera_Outdoor_4MP_LX-1830CE_IP_Full_Color_eead5_688.jpg
+│   │       │   ├── Camera_Outdoor_8MP_LX-xxxxx_IP_Full_Color_2dd03_8526.png
+│   │       │   ├── DC_FEMALE_77c7d_2971.png
+│   │       │   ├── DC_MALE_afd5c_4760.png
+│   │       │   ├── DC Male Connector_3c29d_2.png
+│   │       │   ├── DC Male Connector_6e30a_2.png
+│   │       │   ├── DC_Male_Connector_7a1c2_9274.png
+│   │       │   ├── Flexible_b02c7_156.jpeg
+│   │       │   ├── HDD_10TB_cfcd2_4152.png
+│   │       │   ├── HDD_1TB_bf96c_6436.png
+│   │       │   ├── HDD_2TB_0f07f_7614.png
+│   │       │   ├── HDD_4TB_3fd39_2560.png
+│   │       │   ├── HDD_6TB_76afe_421.png
+│   │       │   ├── HDD_8TB_2625a_3453.png
+│   │       │   ├── HDD 8TB_98f71_164.png
+│   │       │   ├── IPCAM_6MP_LXAI501MX_175cc_9375.png
+│   │       │   ├── IPCAM 6MP LXAI501MX19 _1657c_181.png
+│   │       │   ├── Kabel_cat_5E_8c455_3560.png
+│   │       │   ├── Kabel_Cat_6_764c8_8123.png
+│   │       │   ├── Kabel LAN Cat 6_bb3e5_158.png
+│   │       │   ├── Kabel_RG59_100M_91f88_8426.png
+│   │       │   ├── Kabel_RG59_300M_0646a_9057.png
+│   │       │   ├── Kabel_RG59_4307b_4201.png
+│   │       │   ├── Kabel_RG59_50M_39a49_2973.jpg
+│   │       │   ├── Kabel_RG6_300M_92f69_9952.jpg
+│   │       │   ├── Konduit_50a8b_4262.png
+│   │       │   ├── _#LWX-HDW1200CLQ__04a5c_7316.png
+│   │       │   ├── LWX-HDW1200CLQ_1b18d_83.png
+│   │       │   ├── #LWX-HDW1200CLQ _7a553_78.png
+│   │       │   ├── _#LWX-HDW1200CLQ__98669_9986.png
+│   │       │   ├── _#LWX-HDW1200CLQ_9b3aa_9979.png
+│   │       │   ├── _#LWX-HDW1200CLQ_d06a9_7648.png
+│   │       │   ├── LWX-HDW1200CLQ_ddee6_83.png
+│   │       │   ├── #LWX-HDW1200CLQ _e276c_78.png
+│   │       │   ├── _#LWX-HDW1200CLQ_f5e55_8140.png
+│   │       │   ├── LWX-HFW1200CLQ_36ed0_2644.png
+│   │       │   ├── LWX-HFW1200CLQ_ab008_84.png
+│   │       │   ├── LX-0000_6d1f9_9143.jpg
+│   │       │   ├── _LX-101AC__3d98c_900.png
+│   │       │   ├── LX-1020CE_67317_3046.png
+│   │       │   ├── LX-10CE50_31a7a_65.png
+│   │       │   ├── LX-10CE50_4a165_65.png
+│   │       │   ├── LX-10CE50_9cf90_65.png
+│   │       │   ├── LX-10CE50_d81d2_1315.png
+│   │       │   ├── LX-11GSA80IMX_1b3db_5588.png
+│   │       │   ├── LX-11GSA80IMX_671cc_74.png
+│   │       │   ├── LX-11GSA80IMX_75654_74.png
+│   │       │   ├── _LX-15F550CM_cc389_6634.png
+│   │       │   ├── LX-1820CE__1e32e_9883.png
+│   │       │   ├── LX-1830-CE_3f432_68.png
+│   │       │   ├── LX-1830-CE_ada3a_450.png
+│   │       │   ├── LX-1908_c0275_8169.png
+│   │       │   ├── LX-1908_df64e_1565.jpg
+│   │       │   ├── LX-1916_0b38c_7953.png
+│   │       │   ├── _LX-1916_20bc6_5003.png
+│   │       │   ├── LX-1916_3945b_7531.jpg
+│   │       │   ├── LX-1916_55535_1248.jpg
+│   │       │   ├── LX-1916_56808_5514.png
+│   │       │   ├── LX-1916_84806_1744.png
+│   │       │   ├── LX-1916_87bfa_9160.png
+│   │       │   ├── LX-1916_edde9_365.png
+│   │       │   ├── LX-1932_da096_9473.png
+│   │       │   ├── LX-1964_da86b_188.png
+│   │       │   ├── LX-1964_f4278_188.png
+│   │       │   ├── LX-19BSA80IMX_59afe_75.png
+│   │       │   ├── _LX-19BSA80IMX_61e03_5386.png
+│   │       │   ├── LX-19CE3IMX_85116_71.png
+│   │       │   ├── LX-19CE3IMX_d276f_71.png
+│   │       │   ├── _LX-19CE3IMX_dd811_2447.png
+│   │       │   ├── LX-20CE50_207a8_66.png
+│   │       │   ├── LX-20CE50_5f7e8_7737.png
+│   │       │   ├── LX-20CE50_a5795_66.png
+│   │       │   ├── LX-20CE50_e227f_66.png
+│   │       │   ├── _LX-210S323D_0678b_8562.png
+│   │       │   ├── LX-210S323D_1de6d_8771.png
+│   │       │   ├── LX-210S323D_71013_85.png
+│   │       │   ├── LX-210S323D_a5a3b_86.png
+│   │       │   ├── LX-2204_42e4c_5214.png
+│   │       │   ├── LX-2208_62383_5733.png
+│   │       │   ├── LX-2230IP_3a873_67.png
+│   │       │   ├── LX-2230IP_9ce3d_6559.png
+│   │       │   ├── LX-23GB05_b6a1d_6366.png
+│   │       │   ├── LX-23GB08_1a323_1763.png
+│   │       │   ├── _LX-312EXT_5ac7c_8039.png
+│   │       │   ├── LX-319S291L_ebf29_3730.png
+│   │       │   ├── LX-319S291L IN_79e0b_87.png
+│   │       │   ├── LX-319S291L OUT_0fec5_88.png
+│   │       │   ├── LX-319S291L_OUT_6f1ff_5255.png
+│   │       │   ├── LX-4F320CE_1b543_9698.png
+│   │       │   ├── __LX-4F320CE_f3ecf_5427.png
+│   │       │   ├── _LX-4F550CM_74c86_3185.png
+│   │       │   ├── __LX-50F320CE_fb87f_2302.png
+│   │       │   ├── LX-511S355D_IN_d790f_1453.png
+│   │       │   ├── LX-511S355D IN_ff32c_91.png
+│   │       │   ├── LX-591S335L OUT_8d984_92.png
+│   │       │   ├── _LX-591S335L_OUT_cc021_902.png
+│   │       │   ├── _LX-8GCE3IMX_4d7a7_3862.png
+│   │       │   ├── LX-8GCE3IMX_a6ed5_69.png
+│   │       │   ├── LX-9504_987ae_8485.png
+│   │       │   ├── LX-9508_74d2b_1243.png
+│   │       │   ├── _LX-9516_8400a_3863.png
+│   │       │   ├── LX-9532_b420b_7500.png
+│   │       │   ├── LX-A12GSP6IMX_6ab02_72.png
+│   │       │   ├── _LX-A12GSP6IMX_bca11_805.png
+│   │       │   ├── LX-A160IMX19_02fb9_260.png
+│   │       │   ├── _LX--A160IMX8G_21d94_8039.png
+│   │       │   ├── LX-B19GSA6IMX_432f8_73.png
+│   │       │   ├── LX-B19GSA6IMX_ee18f_1143.png
+│   │       │   ├── LXC-452SC35L_IN_c2e68_9634.png
+│   │       │   ├── LXC-452SC35L IN_c8536_89.png
+│   │       │   ├── LXC-452SC35L OUT_9ac3c_90.png
+│   │       │   ├── _LXC-452SC35L_OUT_a8de5_8874.png
+│   │       │   ├── _LX-IPF1080CE_5f2f9_3209.png
+│   │       │   ├── _LX-IPF10CE30_5b80d_3608.png
+│   │       │   ├── LX-IPF1830IP_3e6e3_4583.png
+│   │       │   ├── LX-IPF40CMT02_05b43_8810.png
+│   │       │   ├── LX-IPF40CMT17_d126f_8940.png
+│   │       │   ├── _LX-IPF60W80_64847_4513.png
+│   │       │   ├── _LX-NT40IP60_3b7ef_7915.png
+│   │       │   ├── LX-NT40IP9C_bd101_145.png
+│   │       │   ├── LX-POS88GIB-W16_c7cd9_3889.png
+│   │       │   ├── LX-POS88IE-W4_73de6_4263.png
+│   │       │   ├── LX-POS88IE-W8_bf325_7612.png
+│   │       │   ├── __LX-POS8SFP-24_a89a4_9883.png
+│   │       │   ├── LX-PS12C16_69872_6862.png
+│   │       │   ├── LX-PS12C4_a2069_97.png
+│   │       │   ├── LX-PS12C8_feabb_9982.png
+│   │       │   ├── Monitor_20_6fc17_7360.jpg
+│   │       │   ├── Monitor_24_37431_4305.jpg
+│   │       │   ├── Monitor_32_6754f_8175.jpg
+│   │       │   ├── Monitor_43_38325_6001.jpg
+│   │       │   ├── Monitor_50_c0cf2_2106.jpg
+│   │       │   ├── Monitor 55_3d89c_206.jpg
+│   │       │   ├── Monitor_62_bec5c_6000.jpg
+│   │       │   ├── NVR_36_36ae2_7854.png
+│   │       │   ├── NVR 36CH LX-1936_27b25_185.png
+│   │       │   ├── NVR_64_53c7d_7983.png
+│   │       │   ├── PLUG_BOOT_5ca5c_818.png
+│   │       │   ├── POWER_SUPPLY_20A_c3ad5_1337.png
+│   │       │   ├── POWER_SUPPLY_30A_766e4_3933.png
+│   │       │   ├── POWER_SUPPLY_66d33_8484.png
+│   │       │   ├── POWER_SUPPLY_BOX_10A_7e572_8282.png
+│   │       │   ├── POWER_SUPPLY_BOX_20A_faef5_2586.png
+│   │       │   ├── POWER_SUPPLY_BOX_30A_fe7b3_5859.png
+│   │       │   ├── Protector_937ae_169.jpg
+│   │       │   ├── RJ-45_5db93_7841.png
+│   │       │   ├── RJ-45_PACK_cfecc_2987.webp
+│   │       │   ├── Screenshot 2024-11-22 145603.png
+│   │       │   └── Wallmount_79719_3179.webp
+│   │       └── signature
+│   │           ├── signAll.png
+│   │           ├── sn_ttd_1J3Fy_2.jpg
+│   │           └── sn_ttd_BkuYg_2.jpg
+│   ├── auth_logic.php
+│   ├── dashboard-bc.php
+│   ├── dashboard.php
+│   ├── includes
+│   │   ├── db.php
+│   │   ├── footer-create.php
+│   │   ├── footer.php
+│   │   ├── functions.php
+│   │   ├── header-create.php
+│   │   └── header.php
+│   ├── index.php
+│   ├── login.php
+│   ├── logout.php
+│   ├── pages
+│   │   ├── barang
+│   │   │   ├── actions.php
+│   │   │   ├── create.php
+│   │   │   ├── edit.php
+│   │   │   └── index.php
+│   │   ├── customer
+│   │   │   ├── actions.php
+│   │   │   ├── create.php
+│   │   │   ├── edit.php
+│   │   │   └── index.php
+│   │   ├── quotation
+│   │   │   ├── actions-2.php
+│   │   │   ├── actions-bc.php
+│   │   │   ├── actions.php
+│   │   │   ├── ajax_search_customer.php
+│   │   │   ├── ajax_search_item.php
+│   │   │   ├── create.php
+│   │   │   ├── delete.php
+│   │   │   ├── edit.php
+│   │   │   ├── print-1.php
+│   │   │   ├── print.php
+│   │   │   ├── print-test.php
+│   │   │   ├── printt.php
+│   │   │   ├── progress_forms
+│   │   │   │   ├── bast_form.php
+│   │   │   │   ├── invoice_form.php
+│   │   │   │   ├── selesai_form.php
+│   │   │   │   ├── sj_form.php
+│   │   │   │   └── so_form.php
+│   │   │   └── progress.php
+│   │   └── teknisi
+│   │       └── index.php
+│   └── signup.php
+├── quo_data.php
+├── quoProgress1.php
+├── quoProgress.php
+├── quotation
+│   ├── conn.php
+│   ├── css
+│   │   └── style.css
+│   ├── head.php
+│   ├── js
+│   │   └── core-scripts.php
+│   ├── nav
+│   │   ├── footer.php
+│   │   └── sidebar.php
+│   ├── navbar-header.php
+│   └── quotationProgress.php
+├── quo.zip
+├── README.md
+├── req-survey.php
+├── request.php
+├── save_data.php
+├── save_quo.php
+├── search_customer.php
+├── search_cust_request.php
+├── search_product.php
+├── session.php
+├── sidebar.php
+├── sidebar-style-2.html
+├── signup.php
+├── simpan_kode.php
+├── starter-template.html
+├── struktur_data_quo.txt
+├── tables
+│   ├── datatables.html
+│   └── tables.html
+├── update_note.php
+├── update_profile.php
+├── updateQuoDetail.php
+├── update_quo_discount.php
+├── updateQuo.php
+├── update_quotation_from.php
+├── upload-progress.php
+├── uploads
+│   ├── products
+│   │   ├── 10989999_41b07_62.png
+│   │   ├── 10989999_65868_62.png
+│   │   ├── 10989999_bcf2a_6644.png
+│   │   ├── 777_Test_aja_f3a2c_5946.jpg
+│   │   ├── 888_test_aha_9e434_2121.jpg
+│   │   ├── A1-20BC_0372c_76.png
+│   │   ├── A1-20BC_ed7fc_1134.png
+│   │   ├── Access_Point_96ee6_6874.jpg
+│   │   ├── ADAPTOR_2A_711d5_8512.png
+│   │   ├── ADAPTOR_5A_02bc7_8664.png
+│   │   ├── ADAPTOR_dd93a_7810.png
+│   │   ├── AI_Camera_Outdoor_Face_Detection_6MP_LX-850AI_598b7_5529.jpg
+│   │   ├── Ai-OT380M_32aa7_77.png
+│   │   ├── Ai-OT380M_dc8f0_6177.png
+│   │   ├── BNC_9e6d8_5341.png
+│   │   ├── B P_b888b_187.jpg
+│   │   ├── Bracket_77ed6_1234.jpg
+│   │   ├── Camera_Outdoor_4MP_LX-1830CE_IP_Full_8d38c_6452.jpg
+│   │   ├── Camera_Outdoor_4MP_LX-1830CE_IP_Full_Color_6ce7a_4261.jpg
+│   │   ├── Camera_Outdoor_4MP_LX-1830CE_IP_Full_Color_70063_4187.jpg
+│   │   ├── Camera_Outdoor_4MP_LX-1830CE_IP_Full_Color_b2196_5362.jpg
+│   │   ├── Camera_Outdoor_4MP_LX-1830CE_IP_Full_Color_e3756_9470.jpg
+│   │   ├── Camera_Outdoor_4MP_LX-1830CE_IP_Full_Color_eead5_688.jpg
+│   │   ├── Camera_Outdoor_8MP_LX-xxxxx_IP_Full_Color_2dd03_8526.png
+│   │   ├── DC_FEMALE_77c7d_2971.png
+│   │   ├── DC_MALE_afd5c_4760.png
+│   │   ├── DC Male Connector_3c29d_2.png
+│   │   ├── DC Male Connector_6e30a_2.png
+│   │   ├── DC_Male_Connector_7a1c2_9274.png
+│   │   ├── Flexible_b02c7_156.jpeg
+│   │   ├── HDD_10TB_cfcd2_4152.png
+│   │   ├── HDD_1TB_bf96c_6436.png
+│   │   ├── HDD_2TB_0f07f_7614.png
+│   │   ├── HDD_4TB_3fd39_2560.png
+│   │   ├── HDD_6TB_76afe_421.png
+│   │   ├── HDD_8TB_2625a_3453.png
+│   │   ├── HDD 8TB_98f71_164.png
+│   │   ├── IPCAM_6MP_LXAI501MX_175cc_9375.png
+│   │   ├── IPCAM 6MP LXAI501MX19 _1657c_181.png
+│   │   ├── Kabel_cat_5E_8c455_3560.png
+│   │   ├── Kabel_Cat_6_764c8_8123.png
+│   │   ├── Kabel LAN Cat 6_bb3e5_158.png
+│   │   ├── Kabel_RG59_100M_91f88_8426.png
+│   │   ├── Kabel_RG59_300M_0646a_9057.png
+│   │   ├── Kabel_RG59_4307b_4201.png
+│   │   ├── Kabel_RG59_50M_39a49_2973.jpg
+│   │   ├── Kabel_RG6_300M_92f69_9952.jpg
+│   │   ├── Konduit_50a8b_4262.png
+│   │   ├── _#LWX-HDW1200CLQ__04a5c_7316.png
+│   │   ├──  LWX-HDW1200CLQ_1b18d_83.png
+│   │   ├──  #LWX-HDW1200CLQ _7a553_78.png
+│   │   ├── _#LWX-HDW1200CLQ__98669_9986.png
+│   │   ├── _#LWX-HDW1200CLQ_9b3aa_9979.png
+│   │   ├── _#LWX-HDW1200CLQ_d06a9_7648.png
+│   │   ├──  LWX-HDW1200CLQ_ddee6_83.png
+│   │   ├──  #LWX-HDW1200CLQ _e276c_78.png
+│   │   ├── _#LWX-HDW1200CLQ_f5e55_8140.png
+│   │   ├── LWX-HFW1200CLQ_36ed0_2644.png
+│   │   ├── LWX-HFW1200CLQ_ab008_84.png
+│   │   ├── LX-0000_6d1f9_9143.jpg
+│   │   ├── _LX-101AC__3d98c_900.png
+│   │   ├── LX-1020CE_67317_3046.png
+│   │   ├── LX-10CE50_31a7a_65.png
+│   │   ├── LX-10CE50_4a165_65.png
+│   │   ├── LX-10CE50_9cf90_65.png
+│   │   ├── LX-10CE50_d81d2_1315.png
+│   │   ├── LX-11GSA80IMX_1b3db_5588.png
+│   │   ├── LX-11GSA80IMX_671cc_74.png
+│   │   ├── LX-11GSA80IMX_75654_74.png
+│   │   ├── _LX-15F550_34990_6303.png
+│   │   ├── _LX-15F550CM_cc389_6634.png
+│   │   ├── LX-1820CE__1e32e_9883.png
+│   │   ├── LX-1830-CE_3f432_68.png
+│   │   ├── LX-1830-CE_ada3a_450.png
+│   │   ├── LX-1908_c0275_8169.png
+│   │   ├── LX-1908_df64e_1565.jpg
+│   │   ├── LX-1916_0b38c_7953.png
+│   │   ├── _LX-1916_20bc6_5003.png
+│   │   ├── LX-1916_3945b_7531.jpg
+│   │   ├── LX-1916_55535_1248.jpg
+│   │   ├── LX-1916_56808_5514.png
+│   │   ├── LX-1916_84806_1744.png
+│   │   ├── LX-1916_87bfa_9160.png
+│   │   ├── LX-1916_edde9_365.png
+│   │   ├── LX-1932_da096_9473.png
+│   │   ├── LX-1964_da86b_188.png
+│   │   ├── LX-1964_f4278_188.png
+│   │   ├──  LX-19BSA80IMX_59afe_75.png
+│   │   ├── _LX-19BSA80IMX_61e03_5386.png
+│   │   ├──  LX-19CE3IMX_85116_71.png
+│   │   ├──  LX-19CE3IMX_d276f_71.png
+│   │   ├── _LX-19CE3IMX_dd811_2447.png
+│   │   ├── LX-20CE50_207a8_66.png
+│   │   ├── LX-20CE50_5f7e8_7737.png
+│   │   ├── LX-20CE50_a5795_66.png
+│   │   ├── LX-20CE50_e227f_66.png
+│   │   ├── _LX-210S323D_0678b_8562.png
+│   │   ├── LX-210S323D_1de6d_8771.png
+│   │   ├──  LX-210S323D_71013_85.png
+│   │   ├── LX-210S323D_a5a3b_86.png
+│   │   ├── LX-2204_42e4c_5214.png
+│   │   ├── LX-2208_62383_5733.png
+│   │   ├── LX-2230IP_3a873_67.png
+│   │   ├── LX-2230IP_9ce3d_6559.png
+│   │   ├── LX-23GB05_b6a1d_6366.png
+│   │   ├── LX-23GB08_1a323_1763.png
+│   │   ├── _LX-312EXT_5ac7c_8039.png
+│   │   ├── LX-319S291L_ebf29_3730.png
+│   │   ├── LX-319S291L IN_79e0b_87.png
+│   │   ├── LX-319S291L OUT_0fec5_88.png
+│   │   ├── LX-319S291L_OUT_6f1ff_5255.png
+│   │   ├── LX-4F320CE_1b543_9698.png
+│   │   ├── LX-4F320CE_8cb2f_219.png
+│   │   ├── __LX-4F320CE_f3ecf_5427.png
+│   │   ├── _LX-4F550_34913_377.png
+│   │   ├── _LX-4F550CM_74c86_3185.png
+│   │   ├── LX-50F320CE_00dca_242.png
+│   │   ├── __LX-50F320CE_fb87f_2302.png
+│   │   ├── LX-511S355D_IN_d790f_1453.png
+│   │   ├── LX-511S355D IN_ff32c_91.png
+│   │   ├──  LX-591S335L OUT_8d984_92.png
+│   │   ├── _LX-591S335L_OUT_cc021_902.png
+│   │   ├── _LX-8GCE3IMX_4d7a7_3862.png
+│   │   ├──  LX-8GCE3IMX_a6ed5_69.png
+│   │   ├── LX-9504_73a40_129.png
+│   │   ├── LX-9504_987ae_8485.png
+│   │   ├── LX-9508_545f3_130.png
+│   │   ├── LX-9508_74d2b_1243.png
+│   │   ├──  LX-9516_16377_131.png
+│   │   ├── _LX-9516_8400a_3863.png
+│   │   ├── LX-9532_b420b_7500.png
+│   │   ├──  LX-A12GSP6IMX_6ab02_72.png
+│   │   ├── _LX-A12GSP6IMX_bca11_805.png
+│   │   ├──  LX-A160IMX19_02fb9_260.png
+│   │   ├── _LX--A160IMX8G_21d94_8039.png
+│   │   ├── LX-B19GSA6IMX_432f8_73.png
+│   │   ├── LX-B19GSA6IMX_ee18f_1143.png
+│   │   ├── LXC-452SC35L_IN_c2e68_9634.png
+│   │   ├── LXC-452SC35L IN_c8536_89.png
+│   │   ├──  LXC-452SC35L OUT_9ac3c_90.png
+│   │   ├── _LXC-452SC35L_OUT_a8de5_8874.png
+│   │   ├── LX-IPF1040IR_9bf3a_413.png
+│   │   ├── _LX-IPF1080CE_5f2f9_3209.png
+│   │   ├── _LX-IPF10CE30_5b80d_3608.png
+│   │   ├── LX-IPF1830IP_3e6e3_4583.png
+│   │   ├── LX-IPF40CMT02_05b43_8810.png
+│   │   ├── LX-IPF40CMT17_d126f_8940.png
+│   │   ├── _LX-IPF6040IR_e25c8_3716.png
+│   │   ├── _LX-IPF60W80_64847_4513.png
+│   │   ├── _LX-NT40IP60_3b7ef_7915.png
+│   │   ├── LX-NT40IP9C_bd101_145.png
+│   │   ├── LX-POS88GIB-W16_c7cd9_3889.png
+│   │   ├── LX-POS88IE-W4_73de6_4263.png
+│   │   ├── LX-POS88IE-W8_bf325_7612.png
+│   │   ├── __LX-POS8SFP-24_a89a4_9883.png
+│   │   ├── LX-PS12C16_69872_6862.png
+│   │   ├── LX-PS12C4_a2069_97.png
+│   │   ├── LX-PS12C8_feabb_9982.png
+│   │   ├── Monitor_20_6fc17_7360.jpg
+│   │   ├── Monitor_24_37431_4305.jpg
+│   │   ├── Monitor_32_6754f_8175.jpg
+│   │   ├── Monitor_43_38325_6001.jpg
+│   │   ├── Monitor_50_c0cf2_2106.jpg
+│   │   ├── Monitor 55_3d89c_206.jpg
+│   │   ├── Monitor_62_bec5c_6000.jpg
+│   │   ├── NVR_36_36ae2_7854.png
+│   │   ├── NVR 36CH LX-1936_27b25_185.png
+│   │   ├── NVR_64_53c7d_7983.png
+│   │   ├── PLUG_BOOT_5ca5c_818.png
+│   │   ├── POE_04325_247.png
+│   │   ├── POWER_SUPPLY_20A_c3ad5_1337.png
+│   │   ├── POWER_SUPPLY_30A_766e4_3933.png
+│   │   ├── POWER_SUPPLY_66d33_8484.png
+│   │   ├── POWER_SUPPLY_BOX_10A_7e572_8282.png
+│   │   ├── POWER_SUPPLY_BOX_20A_faef5_2586.png
+│   │   ├── POWER_SUPPLY_BOX_30A_fe7b3_5859.png
+│   │   ├── Protector_937ae_169.jpg
+│   │   ├── PSU16CH_bd4fa_254.png
+│   │   ├── PSU4CH_9d08f_238.png
+│   │   ├── PSU8CH_7f23f_229.png
+│   │   ├── RJ-45_5db93_7841.png
+│   │   ├── RJ-45_PACK_cfecc_2987.webp
+│   │   ├── Screenshot 2024-11-22 145603.png
+│   │   ├── Wallmount_79719_3179.webp
+│   │   ├── XVR04_20da2_1686.png
+│   │   └── XVR08_703a6_228.png
+│   ├── profile
+│   │   ├── pp_53486_1.jpg
+│   │   ├── pp_B0IbH_2.jpg
+│   │   ├── pp_LbKWI_2.jpg
+│   │   └── user-no-image.jpg
+│   ├── progress
+│   │   ├── invoice
+│   │   ├── sj
+│   │   │   └── sj_9ab15bb_42.jpg
+│   │   └── so
+│   │       ├── so_3538e8c_43.pdf
+│   │       ├── so_c69c3dc_42.docx
+│   │       └── so_e46fe19_42.xlsx
+│   ├── quo_cv
+│   ├── quo_loewix
+│   └── signature
+│       ├── sn_ttd_1J3Fy_2.jpg
+│       ├── sn_ttd_BkuYg_2.jpg
+│       └── ttd.png
+├── .user.ini
+├── users.php
+├── view-request.php
+├── widgets.html
+└── withPic.php
+
+70 directories, 631 files
