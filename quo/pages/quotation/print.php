@@ -310,7 +310,7 @@ document.getElementById('confirmPrintBtn').addEventListener('click', function() 
     var includeImages = document.getElementById('includeImages').checked;
     var includeLinks = document.getElementById('includeLinks').checked;
 
-    // Build @media print CSS dynamically — this CANNOT be undone by afterprint
+    // Build @media print CSS — persistent, cannot be undone
     var css = '@media print {\n';
     if (!includeImages) {
         css += '  .col-picture { display: none !important; }\n';
@@ -324,7 +324,7 @@ document.getElementById('confirmPrintBtn').addEventListener('click', function() 
     css += '}\n';
     printStyleEl.textContent = css;
 
-    // Apply inline styles for on-screen preview
+    // Apply layout changes to DOM (both screen + print)
     document.querySelectorAll('.col-picture').forEach(function(cell) {
         cell.style.display = includeImages ? 'table-cell' : 'none';
     });
@@ -347,30 +347,14 @@ document.getElementById('confirmPrintBtn').addEventListener('click', function() 
         if (modal) modal.hide();
     }
 
-    // Delay for mobile to ensure modal is fully hidden
+    // Delay for mobile
     setTimeout(function() {
         window.print();
     }, 500);
 });
 
-window.addEventListener('afterprint', function() {
-    // Restore inline styles for screen — but keep the @media print CSS!
-    document.querySelectorAll('.col-picture').forEach(function(cell) {
-        cell.style.display = 'table-cell';
-    });
-    document.querySelectorAll('.print-links').forEach(function(div) {
-        div.style.display = 'block';
-    });
-    document.querySelector('.col-desc-header').style.width = '48%';
-    document.querySelector('.col-price-header').style.width = '12%';
-    document.querySelector('.col-amount-header').style.width = '13%';
-    document.querySelectorAll('.colspan-toggle').forEach(function(cell) {
-        cell.setAttribute('colspan', 5);
-    });
-    // NOTE: printStyleEl.textContent is NOT cleared — it stays active for the
-    // Android print dialog which renders AFTER afterprint fires.
-    // It only affects @media print, so screen display is unaffected.
-});
+// NO afterprint handler — this is a print page, no need to restore state.
+// User can re-open the modal and toggle options if needed.
 </script>
 </body>
 </html>
