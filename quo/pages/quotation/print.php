@@ -111,6 +111,16 @@ if (!empty($quote['ttd'])) {
             body { margin: 0; padding: 0; background-color: white; font-size: 9pt; }
             .controls, .modal, .modal-backdrop { display: none !important; }
             .page-container { display: block; }
+
+            /* Print options: hide images */
+            body.hide-images .col-picture { display: none !important; }
+            body.hide-images .col-desc-header { width: 55% !important; }
+            body.hide-images .col-price-header { width: 15% !important; }
+            body.hide-images .col-amount-header { width: 15% !important; }
+            body.hide-images .colspan-toggle { /* handled via JS colspan */ }
+
+            /* Print options: hide links */
+            body.hide-links .print-links { display: none !important; }
         }
     </style>
 </head>
@@ -294,15 +304,27 @@ if (!empty($quote['ttd'])) {
 document.getElementById('confirmPrintBtn').addEventListener('click', function() {
     var includeImages = document.getElementById('includeImages').checked;
     var includeLinks = document.getElementById('includeLinks').checked;
-    
+
+    // Toggle CSS classes on body — @media print rules handle visibility
+    if (!includeImages) {
+        document.body.classList.add('hide-images');
+    } else {
+        document.body.classList.remove('hide-images');
+    }
+
+    if (!includeLinks) {
+        document.body.classList.add('hide-links');
+    } else {
+        document.body.classList.remove('hide-links');
+    }
+
+    // Also apply inline styles for the on-screen preview
     document.querySelectorAll('.col-picture').forEach(function(cell) {
         cell.style.display = includeImages ? 'table-cell' : 'none';
     });
-    
     document.querySelectorAll('.print-links').forEach(function(div) {
         div.style.display = includeLinks ? 'block' : 'none';
     });
-
     document.querySelector('.col-desc-header').style.width = includeImages ? '48%' : '55%';
     document.querySelector('.col-price-header').style.width = includeImages ? '12%' : '15%';
     document.querySelector('.col-amount-header').style.width = includeImages ? '13%' : '15%';
@@ -312,20 +334,24 @@ document.getElementById('confirmPrintBtn').addEventListener('click', function() 
         cell.setAttribute('colspan', newColspan);
     });
 
+    // Close modal
     var modalEl = document.getElementById('printOptionsModal');
     if (modalEl) {
         var modal = bootstrap.Modal.getInstance(modalEl);
-        if (modal) {
-            modal.hide();
-        }
+        if (modal) modal.hide();
     }
-    
+
+    // Longer delay for mobile to ensure modal is fully hidden
     setTimeout(function() {
         window.print();
-    }, 250);
+    }, 500);
 });
 
-window.addEventListener('afterprint', (event) => {
+window.addEventListener('afterprint', function() {
+    // Restore body classes
+    document.body.classList.remove('hide-images', 'hide-links');
+
+    // Restore inline styles
     document.querySelectorAll('.col-picture').forEach(function(cell) {
         cell.style.display = 'table-cell';
     });
