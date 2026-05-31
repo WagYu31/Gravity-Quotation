@@ -301,24 +301,30 @@ if (!empty($quote['ttd'])) {
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
+// Persistent dynamic print stylesheet — survives afterprint on mobile
+var printStyleEl = document.createElement('style');
+printStyleEl.id = 'dynamic-print-css';
+document.head.appendChild(printStyleEl);
+
 document.getElementById('confirmPrintBtn').addEventListener('click', function() {
     var includeImages = document.getElementById('includeImages').checked;
     var includeLinks = document.getElementById('includeLinks').checked;
 
-    // Toggle CSS classes on body — @media print rules handle visibility
+    // Build @media print CSS dynamically — this CANNOT be undone by afterprint
+    var css = '@media print {\n';
     if (!includeImages) {
-        document.body.classList.add('hide-images');
-    } else {
-        document.body.classList.remove('hide-images');
+        css += '  .col-picture { display: none !important; }\n';
+        css += '  .col-desc-header { width: 55% !important; }\n';
+        css += '  .col-price-header { width: 15% !important; }\n';
+        css += '  .col-amount-header { width: 15% !important; }\n';
     }
-
     if (!includeLinks) {
-        document.body.classList.add('hide-links');
-    } else {
-        document.body.classList.remove('hide-links');
+        css += '  .print-links { display: none !important; }\n';
     }
+    css += '}\n';
+    printStyleEl.textContent = css;
 
-    // Also apply inline styles for the on-screen preview
+    // Apply inline styles for on-screen preview
     document.querySelectorAll('.col-picture').forEach(function(cell) {
         cell.style.display = includeImages ? 'table-cell' : 'none';
     });
@@ -341,17 +347,14 @@ document.getElementById('confirmPrintBtn').addEventListener('click', function() 
         if (modal) modal.hide();
     }
 
-    // Longer delay for mobile to ensure modal is fully hidden
+    // Delay for mobile to ensure modal is fully hidden
     setTimeout(function() {
         window.print();
     }, 500);
 });
 
 window.addEventListener('afterprint', function() {
-    // Restore body classes
-    document.body.classList.remove('hide-images', 'hide-links');
-
-    // Restore inline styles
+    // Restore inline styles for screen — but keep the @media print CSS!
     document.querySelectorAll('.col-picture').forEach(function(cell) {
         cell.style.display = 'table-cell';
     });
@@ -364,6 +367,9 @@ window.addEventListener('afterprint', function() {
     document.querySelectorAll('.colspan-toggle').forEach(function(cell) {
         cell.setAttribute('colspan', 5);
     });
+    // NOTE: printStyleEl.textContent is NOT cleared — it stays active for the
+    // Android print dialog which renders AFTER afterprint fires.
+    // It only affects @media print, so screen display is unaffected.
 });
 </script>
 </body>
