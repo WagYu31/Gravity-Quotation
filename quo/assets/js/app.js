@@ -187,8 +187,26 @@ $(document).ready(function() {
             theme: 'bootstrap-5',
             placeholder: '-- Ketik untuk cari barang --',
             allowClear: true,
+            minimumInputLength: 2,
             width: '100%',
             dropdownParent: $('#addItemModal'),
+            ajax: {
+                url: '/quo/pages/quotation/ajax_search_item.php',
+                dataType: 'json',
+                delay: 250,
+                data: function (params) { return { term: params.term }; },
+                processResults: function (data) {
+                    return {
+                        results: $.map(data.results, function (item) {
+                            return {
+                                text: item.text, id: item.id, price: item.price,
+                                name: item.name, desc: item.desc, unit: item.unit
+                            }
+                        })
+                    };
+                },
+                cache: true
+            },
             language: {
                 noResults: function() {
                     return 'Barang tidak ditemukan';
@@ -197,7 +215,7 @@ $(document).ready(function() {
                     return 'Mencari...';
                 },
                 inputTooShort: function() {
-                    return 'Ketik untuk mencari...';
+                    return 'Ketik minimal 2 huruf untuk mencari...';
                 }
             }
         });
