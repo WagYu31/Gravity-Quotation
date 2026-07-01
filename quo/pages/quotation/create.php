@@ -59,9 +59,10 @@ if (!isset($_SESSION['user_id'])) {
                     <div class="gv-form-card-body p-0">
                         <div class="table-responsive">
                             <table class="table table-bordered gv-items-table" id="quotation-items-table">
-                                <colgroup><col style="width: 40px;"><col style="width: auto;"><col style="width: 60px;"><col style="width: 130px;"><col style="width: 160px;"><col style="width: 140px;"><col style="width: 46px;"></colgroup>
+                                <colgroup><col style="width: 30px;"><col style="width: 40px;"><col style="width: auto;"><col style="width: 60px;"><col style="width: 130px;"><col style="width: 160px;"><col style="width: 140px;"><col style="width: 46px;"></colgroup>
                                 <thead>
                                     <tr>
+                                        <th class="text-center" style="width:30px;"></th>
                                         <th class="text-center">No</th>
                                         <th>Nama Barang</th>
                                         <th class="text-center">Qty</th>

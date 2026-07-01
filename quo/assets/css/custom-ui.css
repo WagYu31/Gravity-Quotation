@@ -2972,3 +2972,45 @@ hr {
   .gv-btn-back { align-self: flex-start; }
   .gv-grand-total-value { font-size: 16px; }
 }
+
+/* ============================================================
+   DRAG & DROP — Sortable Table Row Reorder
+   ============================================================ */
+.drag-handle {
+  cursor: grab !important;
+  user-select: none;
+  transition: background-color 0.15s ease;
+}
+.drag-handle:hover {
+  background-color: var(--gv-primary-100, #fef9c3) !important;
+}
+.drag-handle:active {
+  cursor: grabbing !important;
+}
+.drag-handle i {
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+.drag-handle:hover i {
+  color: var(--gv-primary, #eab308) !important;
+  transform: scale(1.2);
+}
+
+/* Ghost: placeholder row saat sedang di-drag */
+.sortable-ghost {
+  background-color: var(--gv-primary-50, #fefce8) !important;
+  opacity: 0.6;
+  border: 2px dashed var(--gv-primary, #eab308) !important;
+}
+
+/* Chosen: baris yang sedang dipegang */
+.sortable-chosen {
+  background-color: #fff !important;
+  box-shadow: 0 8px 25px rgba(234, 179, 8, 0.25), 0 4px 10px rgba(0,0,0,0.08);
+  border-radius: 4px;
+  z-index: 999;
+}
+
+/* Drag: baris yang sedang melayang */
+.sortable-drag {
+  opacity: 0.95;
+}

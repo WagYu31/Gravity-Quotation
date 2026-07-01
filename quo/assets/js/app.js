@@ -90,6 +90,7 @@ $(document).ready(function() {
         const rowNum = $('#quotation-items-table tbody tr').length + 1;
         const rowHtml = `
             <tr data-item-id="${selected.val()}">
+                <td class="text-center drag-handle" style="cursor: grab; vertical-align: middle;"><i class="bi bi-grip-vertical" style="font-size: 16px; color: #94a3b8;"></i></td>
                 <td class="text-center row-number">${rowNum}</td>
                 <td><input type="text" class="form-control form-control-sm item-name" value="${data.name}"><textarea class="form-control form-control-sm mt-1 item-desc" style="font-size:10px;" disabled>${data.desc || ''}</textarea></td>
                 <td class="text-center"><input type="number" class="form-control form-control-sm quantity text-center" value="1" min="1"></td>
@@ -155,6 +156,24 @@ $(document).ready(function() {
     // INISIALISASI
     // ======================================================
     calculateAll();
+
+    // ======================================================
+    // DRAG & DROP — SortableJS untuk reorder baris tabel
+    // ======================================================
+    const tableBody = document.querySelector('#quotation-items-table tbody');
+    if (tableBody && typeof Sortable !== 'undefined') {
+        Sortable.create(tableBody, {
+            handle: '.drag-handle',
+            animation: 200,
+            ghostClass: 'sortable-ghost',
+            chosenClass: 'sortable-chosen',
+            dragClass: 'sortable-drag',
+            onEnd: function() {
+                renumberRows();
+                calculateAll();
+            }
+        });
+    }
 
     // Inisialisasi Select2 pada dropdown "Pilih Barang" di modal
     // agar bisa diketik/search, bukan hanya scroll
