@@ -72,11 +72,12 @@ $parent_id = $quote['parent_quotation_id'] ?? $quote['id'];
                         <h5>Daftar Barang</h5>
                         <div class="table-responsive">
                             <table class="table table-bordered" id="quotation-items-table">
-                                <colgroup><col style="width: 40px;"><col style="width: auto;"><col style="width: 60px;"><col style="width: 130px;"><col style="width: 160px;"><col style="width: 140px;"><col style="width: 46px;"></colgroup>
-                                <thead class="table-light"><tr><th class="text-center">No</th><th>Nama Barang</th><th class="text-center">Qty</th><th class="text-center">Harga Satuan</th><th class="text-center">Diskon</th><th class="text-center">Total</th><th class="text-center">Aksi</th></tr></thead>
+                                <colgroup><col style="width: 30px;"><col style="width: 40px;"><col style="width: auto;"><col style="width: 60px;"><col style="width: 130px;"><col style="width: 160px;"><col style="width: 140px;"><col style="width: 46px;"></colgroup>
+                                <thead class="table-light"><tr><th class="text-center" style="width:30px;"></th><th class="text-center">No</th><th>Nama Barang</th><th class="text-center">Qty</th><th class="text-center">Harga Satuan</th><th class="text-center">Diskon</th><th class="text-center">Total</th><th class="text-center">Aksi</th></tr></thead>
                                 <tbody>
                                     <?php $rowNum = 0; foreach ($quote_items as $item): $rowNum++; ?>
                                     <tr data-item-id="<?php echo $item['barang_id']; ?>">
+                                        <td class="text-center drag-handle" style="cursor: grab; vertical-align: middle;"><i class="bi bi-grip-vertical" style="font-size: 16px; color: #94a3b8;"></i></td>
                                         <td class="text-center row-number"><?php echo $rowNum; ?></td>
                                         <td>
                                             <input type="text" class="form-control form-control-sm item-name" value="<?php echo htmlspecialchars($item['item_name']); ?>">
