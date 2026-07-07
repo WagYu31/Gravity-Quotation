@@ -37,11 +37,11 @@ while ($row = $result->fetch_assoc()) {
     // Kita sertakan data tambahan (price, name, etc.) agar bisa digunakan nanti
     $items[] = [
         'id' => $row['id'],
-        'text' => htmlspecialchars($row['kategori'] . " (" . $row['code'] . ")"),
+        'text' => htmlspecialchars(($row['kategori'] ?? '') . " (" . ($row['code'] ?? '') . ")"),
         'price' => $row['price'],
-        'name' => htmlspecialchars($row['kategori']),
-        'desc' => htmlspecialchars($row['desc']),
-        'unit' => htmlspecialchars($row['satuan'])
+        'name' => htmlspecialchars($row['kategori'] ?? ''),
+        'desc' => htmlspecialchars($row['desc'] ?? ''),
+        'unit' => htmlspecialchars($row['satuan'] ?? '')
     ];
 }
 
