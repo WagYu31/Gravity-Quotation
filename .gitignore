@@ -19,3 +19,7 @@ Thumbs.db
 # Environment
 .env
 *.log
+
+# Database config (server-specific credentials)
+quo/includes/db.php
+conn.php
