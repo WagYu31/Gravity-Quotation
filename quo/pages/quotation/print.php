@@ -180,10 +180,11 @@ if (!empty($quote['ttd'])) {
                             <thead>
                                 <tr class="text-center">
                                     <th class="col-no-header" style="width: 5%;">NO</th>
-                                    <th class="col-desc-header" style="width: 48%;">DESCRIPTION</th>
-                                    <th class="col-picture" style="width: 12%;">PICTURE</th>
-                                    <th class="col-qty-header" style="width: 10%;">QTY</th>
+                                    <th class="col-desc-header" style="width: 40%;">DESCRIPTION</th>
+                                    <th class="col-picture" style="width: 10%;">PICTURE</th>
+                                    <th class="col-qty-header" style="width: 9%;">QTY</th>
                                     <th class="col-price-header" style="width: 12%;">PRICE</th>
+                                    <th class="col-disc-header" style="width: 11%;">DISKON</th>
                                     <th class="col-amount-header" style="width: 13%;">AMOUNT</th>
                                 </tr>
                             </thead>
@@ -221,17 +222,29 @@ if (!empty($quote['ttd'])) {
                                         <?= number_format($item['item_price'], 0, ',', '.'); ?>
                                     </td>
                                     <td class="text-end px-2">
-                                        
                                         <?php
-                                        $amount = $item['item_price'] * $item['quantity'];
-                                    
-                                        echo '<span class="float-start">Rp</span> ' . number_format($amount, 0, ',', '.');
+                                        $item_gross = $item['item_price'] * $item['quantity'];
+                                        $disc_val = (float)($item['discount_value'] ?? 0);
+                                        $disc_type = $item['discount_type'] ?? 'AMOUNT';
+                                        if ($disc_val > 0) {
+                                            if ($disc_type === 'PERCENT') {
+                                                echo number_format($disc_val, 0, ',', '.') . '%';
+                                            } else {
+                                                echo '<span class="float-start">Rp</span> ' . number_format($disc_val, 0, ',', '.');
+                                            }
+                                        } else {
+                                            echo '-';
+                                        }
                                         ?>
+                                    </td>
+                                    <td class="text-end px-2">
+                                        <span class="float-start">Rp</span>
+                                        <?= number_format($item['total_amount'], 0, ',', '.'); ?>
                                     </td>
                                 </tr>
                                 <?php $no++; endforeach; ?>
                                 <tr>
-                                    <td colspan="5" class="text-end px-2 colspan-toggle"><strong>Subtotal</strong></td>
+                                    <td colspan="6" class="text-end px-2 colspan-toggle"><strong>Subtotal</strong></td>
                                     <td class="text-end px-2">
                                         <span class="float-start">Rp</span>
                                         <?= number_format($gross_subtotal, 0, ',', '.'); ?>
@@ -239,7 +252,7 @@ if (!empty($quote['ttd'])) {
                                 </tr>
                                 <?php if ($total_discount_to_display > 0): ?>
                                     <tr>
-                                        <td colspan="5" class="text-end px-2 colspan-toggle"><strong>Discount</strong></td>
+                                        <td colspan="6" class="text-end px-2 colspan-toggle"><strong>Discount</strong></td>
                                         <td class="text-end px-2">
                                             <span class="float-start">Rp</span>
                                             <?= number_format($total_discount_to_display, 0, ',', '.'); ?>
@@ -248,7 +261,7 @@ if (!empty($quote['ttd'])) {
                                 <?php endif; ?>
                                 <?php if ($quote['issuer'] === 'CV'): ?>
                                     <tr>
-                                        <td colspan="5" class="text-end px-2 colspan-toggle"><strong>PPN 11%</strong></td>
+                                        <td colspan="6" class="text-end px-2 colspan-toggle"><strong>PPN 11%</strong></td>
                                         <td class="text-end px-2">
                                             <span class="float-start">Rp</span>
                                             <?= number_format($ppn, 0, ',', '.'); ?>
@@ -256,7 +269,7 @@ if (!empty($quote['ttd'])) {
                                     </tr>
                                 <?php endif; ?>
                                 <tr>
-                                    <td colspan="5" class="text-end px-2 colspan-toggle"><strong>Grand Total</strong></td>
+                                    <td colspan="6" class="text-end px-2 colspan-toggle"><strong>Grand Total</strong></td>
                                     <td class="text-end px-2 fw-bold">
                                         <span class="float-start">Rp</span>
                                         <?= number_format($grand_total, 0, ',', '.'); ?>
@@ -335,7 +348,7 @@ document.getElementById('confirmPrintBtn').addEventListener('click', function() 
     document.querySelector('.col-price-header').style.width = includeImages ? '12%' : '15%';
     document.querySelector('.col-amount-header').style.width = includeImages ? '13%' : '15%';
 
-    var newColspan = includeImages ? 5 : 4;
+    var newColspan = includeImages ? 6 : 5;
     document.querySelectorAll('.colspan-toggle').forEach(function(cell) {
         cell.setAttribute('colspan', newColspan);
     });
