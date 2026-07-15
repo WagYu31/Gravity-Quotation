@@ -227,11 +227,13 @@ if (!empty($quote['ttd'])) {
                                         $disc_val = (float)($item['discount_value'] ?? 0);
                                         $disc_type = $item['discount_type'] ?? 'AMOUNT';
                                         if ($disc_val > 0) {
+                                            // Hitung nilai diskon dalam rupiah
                                             if ($disc_type === 'PERCENT') {
-                                                echo number_format($disc_val, 0, ',', '.') . '%';
+                                                $disc_rupiah = $item_gross * ($disc_val / 100);
                                             } else {
-                                                echo '<span class="float-start">Rp</span> ' . number_format($disc_val, 0, ',', '.');
+                                                $disc_rupiah = $disc_val;
                                             }
+                                            echo '<span class="float-start">Rp</span> ' . number_format($disc_rupiah, 0, ',', '.');
                                         } else {
                                             echo '-';
                                         }
