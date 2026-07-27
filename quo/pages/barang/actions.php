@@ -23,8 +23,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
     // Aksi: Buat barang baru
     if ($_POST['action'] === 'create') {
         $image_filename = handle_image_upload('image');
+        
+        // Auto-generate kode barang jika kosong
+        $code = trim($_POST['code'] ?? '');
+        if (empty($code)) {
+            $result = $conn->query("SELECT MAX(id) as max_id FROM barang");
+            $max_id = $result->fetch_assoc()['max_id'] ?? 0;
+            $next_id = $max_id + 1;
+            $code = 'BRG-' . str_pad($next_id, 5, '0', STR_PAD_LEFT);
+        }
+        
         $stmt = $conn->prepare("INSERT INTO barang (code, image, `desc`, name_link_1, link_1, name_link_2, link_2, price, satuan, kategori) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("sssssssdss", $_POST['code'], $image_filename, $_POST['desc'], $_POST['name_link_1'], $_POST['link_1'], $_POST['name_link_2'], $_POST['link_2'], $_POST['price'], $_POST['satuan'], $_POST['kategori']);
+        $stmt->bind_param("sssssssdss", $code, $image_filename, $_POST['desc'], $_POST['name_link_1'], $_POST['link_1'], $_POST['name_link_2'], $_POST['link_2'], $_POST['price'], $_POST['satuan'], $_POST['kategori']);
         $stmt->execute();
         header('Location: index.php?status=created');
         exit();

@@ -42,10 +42,11 @@ if (!isset($_SESSION['user_id'])) {
                             </div>
                             <div class="col-md-4 mb-4">
                                 <label for="code" class="form-label" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #64748b;">Kode Barang</label>
-                                <input type="text" class="form-control" id="code" name="code"
+                                <input type="text" class="form-control" id="code" name="code" placeholder="Otomatis jika kosong"
                                     style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 13px; border-radius: 10px; border: 1.5px solid #e2e8f0; padding: 12px 16px; transition: all 0.2s;"
                                     onfocus="this.style.borderColor='#facc15'; this.style.boxShadow='0 0 0 3px rgba(250,204,21,0.1)'"
                                     onblur="this.style.borderColor='#e2e8f0'; this.style.boxShadow='none'">
+                                <small style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 10px; color: #94a3b8;">Kosongkan untuk generate otomatis (BRG-XXXXX)</small>
                             </div>
                         </div>
 
