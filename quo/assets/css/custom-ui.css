@@ -165,14 +165,35 @@
   border-color: #334155 !important;
 }
 
-[data-theme="dark"] .toolbar-search-input {
+[data-theme="dark"] .dashboard-toolbar {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+  box-shadow: none !important;
+}
+
+[data-theme="dark"] .toolbar-search {
   background: #0f172a !important;
-  border-color: #475569 !important;
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .toolbar-search:focus-within {
+  border-color: #facc15 !important;
+  box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.1) !important;
+  background: #0f172a !important;
+}
+
+[data-theme="dark"] .search-prefix-icon {
+  color: #64748b !important;
+  opacity: 0.7;
+}
+
+[data-theme="dark"] .toolbar-search-input {
+  background: transparent !important;
   color: #f1f5f9 !important;
 }
 
 [data-theme="dark"] .toolbar-search-input::placeholder {
-  color: #64748b !important;
+  color: #475569 !important;
 }
 
 [data-theme="dark"] .filter-pill {
@@ -182,8 +203,9 @@
 }
 
 [data-theme="dark"] .filter-pill:hover {
-  color: #f1f5f9 !important;
-  border-color: #475569 !important;
+  color: #facc15 !important;
+  border-color: #facc15 !important;
+  background: rgba(250, 204, 21, 0.08) !important;
 }
 
 [data-theme="dark"] .filter-pill.active {
