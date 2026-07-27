@@ -60,6 +60,177 @@
 }
 
 /* ============================================================
+   DARK MODE OVERRIDES
+   ============================================================ */
+[data-theme="dark"] {
+  --gv-bg: #0f172a;
+  --gv-surface: #1e293b;
+  --gv-border: #334155;
+  --gv-border-strong: #475569;
+  --gv-text: #f1f5f9;
+  --gv-text-secondary: #cbd5e1;
+  --gv-text-muted: #64748b;
+
+  --gv-table-header-bg: #0f172a;
+  --gv-table-header-text: #f1f5f9;
+  --gv-table-row-alt: #1a2332;
+  --gv-table-row-hover: #2a2a1a;
+  --gv-table-border: #334155;
+
+  --gv-shadow-xs: 0 1px 2px rgba(0,0,0,0.2);
+  --gv-shadow-sm: 0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
+  --gv-shadow-md: 0 4px 8px -1px rgba(0,0,0,0.4), 0 2px 4px -2px rgba(0,0,0,0.3);
+  --gv-shadow-lg: 0 10px 25px -5px rgba(0,0,0,0.5), 0 8px 10px -6px rgba(0,0,0,0.3);
+  --gv-shadow-xl: 0 20px 40px -12px rgba(0,0,0,0.6);
+}
+
+/* Dark mode specific overrides */
+[data-theme="dark"] body {
+  background-color: var(--gv-bg) !important;
+  color: var(--gv-text) !important;
+}
+
+[data-theme="dark"] .gv-navbar {
+  background: rgba(15, 23, 42, 0.95) !important;
+  border-bottom-color: #334155 !important;
+}
+
+[data-theme="dark"] .dashboard-hero {
+  background: linear-gradient(135deg, #1a1a00 0%, #2a2000 50%, #1a1500 100%) !important;
+}
+
+[data-theme="dark"] .dashboard-table-card,
+[data-theme="dark"] .stat-card {
+  background: var(--gv-surface) !important;
+  border-color: var(--gv-border) !important;
+}
+
+[data-theme="dark"] .table {
+  color: var(--gv-text) !important;
+}
+
+[data-theme="dark"] .table > :not(caption) > * > * {
+  background-color: transparent !important;
+  color: var(--gv-text) !important;
+  border-color: var(--gv-table-border) !important;
+}
+
+[data-theme="dark"] .table > tbody > tr:nth-child(even) > * {
+  background-color: var(--gv-table-row-alt) !important;
+}
+
+[data-theme="dark"] .table > tbody > tr:hover > * {
+  background-color: var(--gv-table-row-hover) !important;
+}
+
+[data-theme="dark"] .form-control,
+[data-theme="dark"] .form-select {
+  background-color: #1e293b !important;
+  border-color: #475569 !important;
+  color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .form-control::placeholder {
+  color: #64748b !important;
+}
+
+[data-theme="dark"] .form-control:focus,
+[data-theme="dark"] .form-select:focus {
+  background-color: #1e293b !important;
+  border-color: #facc15 !important;
+  color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .form-label {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .modal-content {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+  color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .modal-header {
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .modal-footer {
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .dropdown-menu {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .dropdown-item {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .dropdown-item:hover {
+  background: #334155 !important;
+  color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .dropdown-divider {
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .gv-user-name {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .toolbar-search-input {
+  background: #1e293b !important;
+  border-color: #475569 !important;
+  color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .filter-pill {
+  background: #1e293b !important;
+  color: #94a3b8 !important;
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .filter-pill.active {
+  background: linear-gradient(135deg, #facc15, #eab308) !important;
+  color: #1e293b !important;
+}
+
+[data-theme="dark"] .alert {
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] ::selection {
+  background: #854d0e;
+  color: #fef3c7;
+}
+
+/* Dark mode toggle button */
+.dark-mode-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1.5px solid var(--gv-border);
+  background: var(--gv-surface);
+  color: var(--gv-text-secondary);
+  cursor: pointer;
+  transition: var(--gv-transition);
+  margin-right: 12px;
+  font-size: 16px;
+}
+
+.dark-mode-toggle:hover {
+  border-color: var(--gv-primary);
+  color: var(--gv-primary);
+  transform: scale(1.05);
+}
+
+/* ============================================================
    1. GLOBAL FOUNDATION
    ============================================================ */
 

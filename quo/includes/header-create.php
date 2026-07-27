@@ -33,6 +33,7 @@ $show_announcement_period = (new DateTime('now', new DateTimeZone('Asia/Jakarta'
             height: calc(1.5em + 0.75rem) !important;
         }
     </style>
+    <script>!function(){var t=localStorage.getItem('gv-theme');if(t)document.documentElement.setAttribute('data-theme',t);}();</script>
 </head>
 <body>
 
@@ -58,6 +59,10 @@ $show_announcement_period = (new DateTime('now', new DateTimeZone('Asia/Jakarta'
                 <i class="bi bi-megaphone-fill"></i> Info
             </button>
           <?php endif; ?>
+
+          <button type="button" class="dark-mode-toggle" id="darkModeToggle" title="Toggle Dark Mode">
+              <i class="bi bi-moon-stars-fill"></i>
+          </button>
 
           <div class="dropdown">
             <a href="#" class="gv-user-trigger dropdown-toggle" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">

@@ -95,6 +95,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.6/Sortable.min.js"></script>
     
     <script src="/quo/assets/js/app.js?v=<?php echo time(); ?>"></script>
+    <script src="/quo/assets/js/dark-mode.js?v=<?php echo time(); ?>"></script>
     
 </body>
 </html>
