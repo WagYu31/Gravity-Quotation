@@ -151,7 +151,7 @@
 }
 
 [data-theme="dark"] .stat-label {
-  color: #64748b !important;
+  color: #94a3b8 !important;
 }
 
 [data-theme="dark"] .stat-total .stat-icon { background: linear-gradient(135deg, #422006, #78350f) !important; color: #fbbf24 !important; }
@@ -217,16 +217,71 @@
 }
 
 /* --- Action buttons in table --- */
-[data-theme="dark"] .gv-action-btn {
-  background: #0f172a !important;
-  border-color: #475569 !important;
-  color: #94a3b8 !important;
+[data-theme="dark"] .action-btn {
+  border-color: #334155 !important;
 }
 
-[data-theme="dark"] .gv-action-btn:hover {
-  border-color: #facc15 !important;
-  color: #facc15 !important;
+[data-theme="dark"] .action-print,
+[data-theme="dark"] .action-edit,
+[data-theme="dark"] .action-approve,
+[data-theme="dark"] .action-progress,
+[data-theme="dark"] .action-delete {
   background: #1e293b !important;
+  color: #64748b !important;
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .action-print:hover {
+  background: #475569 !important;
+  color: #f1f5f9 !important;
+  border-color: #475569 !important;
+}
+
+[data-theme="dark"] .action-edit:hover {
+  background: rgba(234,179,8,0.2) !important;
+  color: #facc15 !important;
+  border-color: rgba(234,179,8,0.4) !important;
+}
+
+[data-theme="dark"] .action-approve:hover {
+  background: rgba(5,150,105,0.2) !important;
+  color: #34d399 !important;
+  border-color: rgba(5,150,105,0.4) !important;
+}
+
+[data-theme="dark"] .action-progress:hover {
+  background: rgba(234,179,8,0.2) !important;
+  color: #facc15 !important;
+  border-color: rgba(234,179,8,0.4) !important;
+}
+
+[data-theme="dark"] .action-delete:hover {
+  background: rgba(220,38,38,0.15) !important;
+  color: #f87171 !important;
+  border-color: rgba(220,38,38,0.3) !important;
+}
+
+[data-theme="dark"] .action-btn-sm {
+  background: #1e293b !important;
+  color: #64748b !important;
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .action-btn-sm:hover {
+  background: rgba(234,179,8,0.2) !important;
+  color: #facc15 !important;
+  border-color: rgba(234,179,8,0.4) !important;
+}
+
+/* --- History cell --- */
+[data-theme="dark"] .history-cell {
+  background: #0f172a !important;
+}
+
+/* --- Nav link active pill (Dashboard btn) --- */
+[data-theme="dark"] .gv-nav-link.active {
+  background: rgba(250, 204, 21, 0.15) !important;
+  color: #facc15 !important;
 }
 
 /* --- Issuer badge --- */
