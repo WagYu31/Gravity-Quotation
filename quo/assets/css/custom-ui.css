@@ -194,7 +194,7 @@
 
 /* --- Table --- */
 [data-theme="dark"] .table {
-  color: var(--gv-text) !important;
+  color: #e2e8f0 !important;
 }
 
 [data-theme="dark"] .table > :not(caption) > * > * {
@@ -203,17 +203,93 @@
   border-color: #334155 !important;
 }
 
+/* Dashboard table header — these have hardcoded !important dark colors */
+[data-theme="dark"] .dashboard-table th {
+  color: #94a3b8 !important;
+  background: #0f172a !important;
+  border-bottom: 1px solid #334155 !important;
+}
+
+[data-theme="dark"] .sort-link {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .sort-link:hover {
+  color: #facc15 !important;
+}
+
+/* Dashboard table body rows */
+[data-theme="dark"] .dashboard-table tbody td {
+  color: #cbd5e1 !important;
+  border-bottom: 1px solid #1e293b !important;
+}
+
+[data-theme="dark"] .dashboard-table tbody tr.main-row:hover {
+  background: rgba(250, 204, 21, 0.05) !important;
+  border-left-color: #facc15 !important;
+}
+
+/* Code link (quotation code) */
+[data-theme="dark"] .code-link {
+  color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .code-link:hover {
+  color: #facc15 !important;
+}
+
+/* Customer name, user name, date cells */
+[data-theme="dark"] .customer-name,
+[data-theme="dark"] .user-name,
+[data-theme="dark"] .date-cell {
+  color: #cbd5e1 !important;
+}
+
+/* Grand total */
+[data-theme="dark"] .grand-total-cell {
+  color: #f1f5f9 !important;
+  font-weight: 700;
+}
+
+/* Issuer badge */
+[data-theme="dark"] .issuer-badge {
+  background: rgba(148, 163, 184, 0.12) !important;
+  color: #94a3b8 !important;
+}
+
+/* Version badge */
+[data-theme="dark"] .version-badge {
+  background: rgba(250, 204, 21, 0.15) !important;
+  color: #fbbf24 !important;
+}
+
+/* Status pills */
+[data-theme="dark"] .status-pill {
+  opacity: 0.9;
+}
+
+/* Table header (generic) */
 [data-theme="dark"] .table > thead > tr > th {
   background-color: #0f172a !important;
   color: #94a3b8 !important;
 }
 
 [data-theme="dark"] .table > tbody > tr:nth-child(even) > * {
-  background-color: rgba(15, 23, 42, 0.5) !important;
+  background-color: rgba(15, 23, 42, 0.4) !important;
 }
 
 [data-theme="dark"] .table > tbody > tr:hover > * {
-  background-color: rgba(250, 204, 21, 0.08) !important;
+  background-color: rgba(250, 204, 21, 0.06) !important;
+}
+
+/* History table (sub-rows) */
+[data-theme="dark"] .history-table td {
+  color: #94a3b8 !important;
+  border-color: #1e293b !important;
+}
+
+[data-theme="dark"] .history-cell {
+  background: #0f172a !important;
 }
 
 /* --- Action buttons in table --- */
@@ -282,24 +358,6 @@
 [data-theme="dark"] .gv-nav-link.active {
   background: rgba(250, 204, 21, 0.15) !important;
   color: #facc15 !important;
-}
-
-/* --- Issuer badge --- */
-[data-theme="dark"] .issuer-badge {
-  background: #0f172a !important;
-  border-color: #475569 !important;
-  color: #94a3b8 !important;
-}
-
-/* --- Status badge --- */
-[data-theme="dark"] .badge {
-  opacity: 0.9;
-}
-
-/* --- Version badge --- */
-[data-theme="dark"] .version-badge {
-  background: rgba(250, 204, 21, 0.15) !important;
-  color: #fbbf24 !important;
 }
 
 /* --- Forms (generic) --- */
