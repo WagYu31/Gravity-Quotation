@@ -23,7 +23,7 @@ $show_announcement_period = (new DateTime('now', new DateTimeZone('Asia/Jakarta'
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
 
     <link rel="stylesheet" href="/quo/assets/css/style.css">
-    <link rel="stylesheet" href="/quo/assets/css/custom-ui.css">
+    <link rel="stylesheet" href="/quo/assets/css/custom-ui.css?v=<?php echo time(); ?>">
     <script>!function(){var t=localStorage.getItem('gv-theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}();</script>
 
 </head>
