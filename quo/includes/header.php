@@ -24,7 +24,7 @@ $show_announcement_period = (new DateTime('now', new DateTimeZone('Asia/Jakarta'
 
     <link rel="stylesheet" href="/quo/assets/css/style.css">
     <link rel="stylesheet" href="/quo/assets/css/custom-ui.css">
-    <script>!function(){var t=localStorage.getItem('gv-theme');if(t)document.documentElement.setAttribute('data-theme',t);}();</script>
+    <script>!function(){var t=localStorage.getItem('gv-theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}();</script>
 
 </head>
 <body>
@@ -54,7 +54,10 @@ $show_announcement_period = (new DateTime('now', new DateTimeZone('Asia/Jakarta'
           <?php endif; ?>
 
           <button type="button" class="dark-mode-toggle" id="darkModeToggle" title="Toggle Dark Mode">
-              <i class="bi bi-moon-stars-fill"></i>
+              <span class="toggle-thumb">
+                  <i class="bi bi-sun-fill icon-sun"></i>
+                  <i class="bi bi-moon-fill icon-moon" style="display:none;"></i>
+              </span>
           </button>
 
           <div class="dropdown">

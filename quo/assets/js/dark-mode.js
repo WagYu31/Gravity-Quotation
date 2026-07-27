@@ -1,29 +1,41 @@
 /**
  * Dark Mode Toggle — Gravitti Quotation System
+ * Animated sliding switch with sun/moon icons
  * Persists user preference via localStorage
  */
 (function() {
     const toggle = document.getElementById('darkModeToggle');
     if (!toggle) return;
 
-    const icon = toggle.querySelector('i');
+    const sunIcon = toggle.querySelector('.icon-sun');
+    const moonIcon = toggle.querySelector('.icon-moon');
 
-    function updateIcon(isDark) {
-        if (icon) {
-            icon.className = isDark ? 'bi bi-sun-fill' : 'bi bi-moon-stars-fill';
+    function updateIcons(isDark) {
+        if (sunIcon && moonIcon) {
+            sunIcon.style.display = isDark ? 'none' : 'inline';
+            moonIcon.style.display = isDark ? 'inline' : 'none';
         }
     }
 
-    // Read current state from <html> attribute (set by inline script in <head>)
+    // Initialize from current state
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-    updateIcon(isDark);
+    updateIcons(isDark);
 
     toggle.addEventListener('click', function() {
         const currentlyDark = document.documentElement.getAttribute('data-theme') === 'dark';
         const newTheme = currentlyDark ? 'light' : 'dark';
 
-        document.documentElement.setAttribute('data-theme', newTheme);
+        // Apply theme
+        if (newTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+            document.documentElement.removeAttribute('data-theme');
+        }
+
+        // Save preference
         localStorage.setItem('gv-theme', newTheme);
-        updateIcon(newTheme === 'dark');
+
+        // Update icons
+        updateIcons(newTheme === 'dark');
     });
 })();
